@@ -68,7 +68,7 @@ public class GameMain extends JPanel {
 
     //sets ups the panel and frame.
     public static void main(String[] args) {
-        JFrame window = new JFrame("Frogger!");
+        JFrame window = new JFrame("The Game Where Ben Does All the Work");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setBounds(0, 0, FRAMEWIDTH, FRAMEHEIGHT + 22); //(x, y, w, h) 22 due to title bar.
 

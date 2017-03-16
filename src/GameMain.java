@@ -7,6 +7,7 @@ public class GameMain extends JPanel {
 
     //instance fields for the general environment
     public static final int FRAMEWIDTH = 1000, FRAMEHEIGHT = 600;
+    private Background bg;
     private Timer timer;
     private boolean[] keys;
 
@@ -59,16 +60,13 @@ public class GameMain extends JPanel {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
 
-        //draw all the things.
-//        for(Sprite s: obstacles){
-//            s.draw(g2);
-//        }
+        bg.draw(g2);
 
     }
 
     //sets ups the panel and frame.
     public static void main(String[] args) {
-        JFrame window = new JFrame("The Game Where Ben Does All the Work");
+        JFrame window = new JFrame("Ermahgerd Hopps is playing this");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setBounds(0, 0, FRAMEWIDTH, FRAMEHEIGHT + 22); //(x, y, w, h) 22 due to title bar.
 

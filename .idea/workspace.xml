@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca06a22a-1067-404f-bed5-691325dd537c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Bird.java" />
+    <list default="true" id="ca06a22a-1067-404f-bed5-691325dd537c" name="Default" comment="add bird class">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="thegamewherebendoesallthework.iws" />
@@ -472,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489668028395</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add bird class">
+      <created>1489668063534</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489668063534</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -520,7 +526,8 @@
     <MESSAGE value="sout" />
     <MESSAGE value="Add some classes" />
     <MESSAGE value="Remove my name (pls)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove my name (pls)" />
+    <MESSAGE value="add bird class" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bird class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

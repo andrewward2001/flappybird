@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca06a22a-1067-404f-bed5-691325dd537c" name="Default" comment="add bird class">
+    <list default="true" id="ca06a22a-1067-404f-bed5-691325dd537c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Sprite.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="thegamewherebendoesallthework.iws" />
@@ -49,12 +50,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bird.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Bird.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bird.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Sprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,6 +106,7 @@
         <option value="$PROJECT_DIR$/src/Pipe.java" />
         <option value="$PROJECT_DIR$/src/Background.java" />
         <option value="$PROJECT_DIR$/src/Bird.java" />
+        <option value="$PROJECT_DIR$/src/Sprite.java" />
       </list>
     </option>
   </component>
@@ -478,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489668063534</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bird">
+      <created>1489668637695</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1489668637695</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -527,7 +548,8 @@
     <MESSAGE value="Add some classes" />
     <MESSAGE value="Remove my name (pls)" />
     <MESSAGE value="add bird class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add bird class" />
+    <MESSAGE value="bird" />
+    <option name="LAST_COMMIT_MESSAGE" value="bird" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -573,6 +595,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

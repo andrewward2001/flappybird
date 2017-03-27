@@ -3,9 +3,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-/**
- * Created by andrew_ward on 3/16/17.
- */
 public class Background {
 
     private BufferedImage bg;

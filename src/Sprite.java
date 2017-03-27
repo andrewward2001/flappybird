@@ -1,18 +1,18 @@
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by andrew_ward on 3/16/17.
- */
 public class Sprite {
 
     private BufferedImage img;
+    private Point loc;
 
-    public Sprite(String name) {
+    private void setPic(String name){
         try {
             img = ImageIO.read(new File("res/"+name));
         } catch (IOException e) {e.printStackTrace();}
     }
+
 }

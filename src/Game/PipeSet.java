@@ -5,16 +5,19 @@ import FuncLibraries.HitBox;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class PipeSet extends Sprite{
+public class PipeSet
+
+{
 
     private static final int fh = GameMain.FRAMEHEIGHT;
     private int topPipeY, botPipeY;
     private Point topPipeLoc, botPipeLoc;
     private BufferedImage topPipePic, botPipePic;
     private HitBox topPipeHitBox, botPipeHitBox;
+    private int speed;
 
     public PipeSet(int x){
-        super.setSpeed(5);
+        setSpeed(5);
         setup(x);
     }
 
@@ -54,15 +57,21 @@ public class PipeSet extends Sprite{
     }
 
     public void update(){
-        super.update();
+        topPipeLoc.translate(-speed, 0);
+        botPipeLoc.translate(-speed, 0);
+        super.setLoc(new Point(topPipeLoc.x, (topPipeLoc.y + botPipeLoc.y)/2));
     }
 
     public void setSpeed(int speed){
-        super.setSpeed(speed);
+        this.speed = speed;
     } //TODO: To be used later for increasing difficulty purposes.
 
     public void draw(Graphics2D g2){
         super.draw(g2);
+    }
+
+    public void endGame(){
+        speed = 0;
     }
 
 }

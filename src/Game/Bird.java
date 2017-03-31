@@ -16,10 +16,9 @@ public class Bird extends Sprite{
         setLoc(new Point(100, 100));
     }
 
-    public void update(ArrayList<HitBox> pipeSetHitBoxes){
+    public void update(){
         hitbox.setBounds(getBoundingRectangle());
-        y-=vy;
-
+        y+=vy;
     }
 
     public void draw(Graphics2D g2){
@@ -28,7 +27,7 @@ public class Bird extends Sprite{
     }
 
     public void bump(){
-        vy = 30;
+        vy = -30;
     }
 
     public HitBox getHitbox(){
@@ -37,6 +36,11 @@ public class Bird extends Sprite{
 
     private Rectangle getBoundingRectangle(){
         return new Rectangle(1, 4, getPic().getWidth(), getPic().getHeight());
+    }
+
+    public void endGame(){
+        vy = 20;
+
     }
 
 }

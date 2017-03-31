@@ -33,7 +33,7 @@ public class GameMain extends JPanel {
         functions = new GameFunctions();
         active = false;
         timer = new Timer(40, e -> {
-            if(keys[KeyEvent.VK_SPACE])
+            if(keys[KeyEvent.VK_SPACE] )
                 bird.bump();
 
             for(PipeSet s: pipeSets)
@@ -42,16 +42,11 @@ public class GameMain extends JPanel {
             //update each obstacle
 
             //check for collisions
-            boolean b = false;
-            if(functions.checkEnemyHitDetection(pipeSets, bird) || functions.checkBackgroundHitDetection(bg, bird))
-                b = true;
-            if(b)
+            if(functions.checkEnemyHitDetection(pipeSets, bird) || functions.checkBackgroundHitDetection(bg, bird)) {
                 endGame();
-            else
-                repaint();
-
-            while(!active)
-                endGame();
+                active = false;
+            }
+            repaint();
         });
         timer.start();
 
@@ -86,8 +81,11 @@ public class GameMain extends JPanel {
 
     }
 
-    private void endGame(){
-        endGame();
+
+    private void endGame() {
+        for (PipeSet p: pipeSets)
+            p.endGame();
+        bird.endGame();
     }
 
     public static void main(String[] args) {

@@ -1,39 +1,35 @@
 package Game;
 
-import FuncLibraries.GameFunctions;
+import FuncLibraries.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+import static FuncLibraries.GameFunctions.FRAMEHEIGHT;
+import static FuncLibraries.GameFunctions.FRAMEWIDTH;
+
 public class GameMain extends JPanel {
 
     //instance fields for the general environment
-    static final int FRAMEWIDTH = 1000, FRAMEHEIGHT = 600;
     private Background bg;
     private Timer timer;
     private boolean[] keys;
     private Bird bird;
     private ArrayList<PipeSet> pipeSets;
     private GameFunctions functions;
-    private boolean debug;
 
-    static boolean active;
+    public static final boolean debug = true;
+
+    static boolean active = true;
 
     GameMain(){
 
-        keys = new boolean[512]; //should be enough to hold any key code.
-        //initialize the instance fields.
-        bird = new Bird();
-        pipeSets = new ArrayList<>();
-        for(int i = 1; i <= 20; i++)
-            pipeSets.add(new PipeSet(1000 + i * 300));
-        bg = new Background();
-        functions = new GameFunctions();
-        active = false;
+        instanceSetup();
+
         timer = new Timer(40, e -> {
-            if(keys[KeyEvent.VK_SPACE] )
+            if(keys[KeyEvent.VK_SPACE] && active)
                 bird.bump();
 
             for(PipeSet s: pipeSets)
@@ -67,6 +63,16 @@ public class GameMain extends JPanel {
             }
         });
 
+    }
+
+    private void instanceSetup(){
+        keys = new boolean[512];
+        bird = new Bird();
+        pipeSets = new ArrayList<>();
+        for(int i = 1; i <= 20; i++)
+            pipeSets.add(new PipeSet(1000 + i * 300));
+        bg = new Background();
+        functions = new GameFunctions();
     }
 
     //Our paint method.

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class GameFunctions {
 
+    public static final int FRAMEWIDTH = 1000, FRAMEHEIGHT = 600;
+
     public boolean checkEnemyHitDetection(ArrayList<PipeSet> pipeSets, Bird bird){
         for(PipeSet p: pipeSets){
             if(p.getTopPipeHitBox().intersects(bird.getHitbox()) || p.getBotPipeHitBox().intersects(bird.getHitbox()))

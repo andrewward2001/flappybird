@@ -2,21 +2,23 @@ package Game;
 
 import FuncLibraries.HitBox;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-public class PipeSet
+import static FuncLibraries.GameFunctions.FRAMEHEIGHT;
 
-{
+public class PipeSet {
 
-    private static final int fh = GameMain.FRAMEHEIGHT;
-    private int topPipeY, botPipeY;
+    private static final int fh = FRAMEHEIGHT;
     private Point topPipeLoc, botPipeLoc;
     private BufferedImage topPipePic, botPipePic;
     private HitBox topPipeHitBox, botPipeHitBox;
     private int speed;
 
-    public PipeSet(int x){
+    PipeSet(int x){
         setSpeed(5);
         setup(x);
     }
@@ -27,25 +29,28 @@ public class PipeSet
     }
 
     private void setupLoc(int x){
-        topPipeY = (int)(Math.random()*700);
-        botPipeY = fh - topPipeY + (int)(Math.random()*10) + 90;
+        int topPipeY = (int)(Math.random()*700);
+        int botPipeY = fh - topPipeY + (int)(Math.random()*10) + 90;
         topPipeLoc = new Point(x, topPipeY);
         botPipeLoc = new Point(x, botPipeY);
     }
 
     private void setupPics(){
-        topPipeHitBox = new HitBox(new Rectangle(topPipeLoc.x, topPipeLoc.y, getTopPipePic().getWidth(), getTopPipePic().getHeight()));
-        botPipeHitBox = new HitBox(new Rectangle(botPipeLoc.x, botPipeLoc.y, getBotPipePic().getWidth(), getBotPipePic().getHeight()));
-    }
 
-    public BufferedImage getTopPipePic(){
-        setPic("topPipe.png");
-        return getPic();
-    }
+        try {
+            topPipePic = ImageIO.read(new File("res/topPipe.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-    public BufferedImage getBotPipePic(){
-        setPic("botPipe.png");
-        return getPic();
+        try {
+            botPipePic = ImageIO.read(new File("res/botPipe.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        topPipeHitBox = new HitBox(new Rectangle(topPipeLoc.x, topPipeLoc.y, topPipePic.getWidth(), topPipePic.getHeight()));
+        botPipeHitBox = new HitBox(new Rectangle(botPipeLoc.x, botPipeLoc.y, botPipePic.getWidth(), botPipePic.getHeight()));
     }
 
     public HitBox getTopPipeHitBox(){
@@ -56,21 +61,25 @@ public class PipeSet
         return botPipeHitBox;
     }
 
-    public void update(){
+    void update(){
         topPipeLoc.translate(-speed, 0);
         botPipeLoc.translate(-speed, 0);
-        super.setLoc(new Point(topPipeLoc.x, (topPipeLoc.y + botPipeLoc.y)/2));
     }
 
-    public void setSpeed(int speed){
+    void setSpeed(int speed){
         this.speed = speed;
     } //TODO: To be used later for increasing difficulty purposes.
 
-    public void draw(Graphics2D g2){
-        super.draw(g2);
+    void draw(Graphics2D g2){
+        g2.drawImage(topPipePic, topPipeLoc.x, topPipeLoc.y, null);
+        g2.drawImage(botPipePic, botPipeLoc.x, botPipeLoc.y, null);
+        if(GameMain.debug) {
+            topPipeHitBox.drawHitBox(g2);
+            botPipeHitBox.drawHitBox(g2);
+        }
     }
 
-    public void endGame(){
+    void endGame(){
         speed = 0;
     }
 

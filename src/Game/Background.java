@@ -1,16 +1,19 @@
 package Game;
 
-import FuncLibraries.HitBox;
+import FuncLibraries.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
+import static FuncLibraries.GameFunctions.FRAMEWIDTH;
+import static FuncLibraries.GameFunctions.FRAMEHEIGHT;
+
 public class Background {
 
     private BufferedImage bg;
-    private static final int FW = GameMain.FRAMEWIDTH, FH = GameMain.FRAMEHEIGHT;
+    private static final int FW = FRAMEWIDTH, FH = FRAMEHEIGHT;
     private HitBox ceilingHitBox, floorHitBox;
 
     public Background(){

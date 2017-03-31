@@ -1,29 +1,42 @@
 package Game;
 
-import FuncLibraries.HitBox;
+import FuncLibraries.*;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class Bird extends Sprite{
+public class Bird{
 
     private HitBox hitbox;
-    private int y, vy;
+    private int vy;
+    private BufferedImage pic;
+    private Point loc;
 
     Bird(){
-        setPic("flappybird.png");
+        try {
+            pic = ImageIO.read(new File("res/flappybird.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        loc = new Point(200, 200);
         hitbox = new HitBox(getBoundingRectangle());
-        setLoc(new Point(100, 100));
     }
 
     public void update(){
         hitbox.setBounds(getBoundingRectangle());
-        y+=vy;
+        loc.translate(0, vy);
+        vy+=5;
     }
 
     public void draw(Graphics2D g2){
-        g2.drawImage(getPic(), 200, y, null);
-        vy+=5;
+        g2.drawImage(pic, loc.x, loc.y, null);
+        if(GameMain.debug)
+            hitbox.drawHitBox(g2);
+
     }
 
     public void bump(){
@@ -35,7 +48,7 @@ public class Bird extends Sprite{
     }
 
     private Rectangle getBoundingRectangle(){
-        return new Rectangle(1, 4, getPic().getWidth(), getPic().getHeight());
+        return new Rectangle(loc.x, loc.y, pic.getWidth(), pic.getHeight());
     }
 
     public void endGame(){

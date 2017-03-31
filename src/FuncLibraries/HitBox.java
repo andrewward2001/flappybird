@@ -8,4 +8,8 @@ public class HitBox extends Rectangle{
         this.setBounds(r);
     }
 
+    public void drawHitBox(Graphics2D g2){
+        g2.drawRect(this.x, this.y, this.width, this.height);
+    }
+
 }

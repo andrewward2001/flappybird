@@ -1,5 +1,7 @@
 package FuncLibraries;
 
+import Game.GameMain;
+
 import java.awt.*;
 
 public class HitBox extends Rectangle{
@@ -9,7 +11,8 @@ public class HitBox extends Rectangle{
     }
 
     public void drawHitBox(Graphics2D g2){
-        g2.drawRect(this.x, this.y, this.width, this.height);
+        if(GameMain.debug)
+            g2.drawRect(this.x, this.y, this.width, this.height);
     }
 
 }

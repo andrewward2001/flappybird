@@ -30,8 +30,8 @@ public class PipeSet {
 
     private void setupLoc(int x){
         int topPipeY = (int)(Math.random()*700);
-        int botPipeY = fh - topPipeY + (int)(Math.random()*10) + 90;
-        topPipeLoc = new Point(x, topPipeY);
+        int botPipeY = fh - topPipeY + (int)(Math.random()*20) + 180;
+        topPipeLoc = new Point(x, 0 - topPipeY);
         botPipeLoc = new Point(x, botPipeY);
     }
 
@@ -62,6 +62,8 @@ public class PipeSet {
     }
 
     void update(){
+        topPipeHitBox.setBounds(getTopBoundingRectangle());
+        botPipeHitBox.setBounds(getBotBoundingRectangle());
         topPipeLoc.translate(-speed, 0);
         botPipeLoc.translate(-speed, 0);
     }
@@ -73,14 +75,17 @@ public class PipeSet {
     void draw(Graphics2D g2){
         g2.drawImage(topPipePic, topPipeLoc.x, topPipeLoc.y, null);
         g2.drawImage(botPipePic, botPipeLoc.x, botPipeLoc.y, null);
-        if(GameMain.debug) {
-            topPipeHitBox.drawHitBox(g2);
-            botPipeHitBox.drawHitBox(g2);
-        }
     }
 
     void endGame(){
         speed = 0;
+    }
+
+    private Rectangle getTopBoundingRectangle(){
+        return new Rectangle(topPipeLoc.x, topPipeLoc.y, topPipePic.getWidth(), topPipePic.getHeight());
+    }
+    private Rectangle getBotBoundingRectangle(){
+        return new Rectangle(botPipeLoc.x, botPipeLoc.y, botPipePic.getWidth(), botPipePic.getHeight());
     }
 
 }

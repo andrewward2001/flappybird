@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Bird{
 
@@ -34,9 +33,6 @@ public class Bird{
 
     public void draw(Graphics2D g2){
         g2.drawImage(pic, loc.x, loc.y, null);
-        if(GameMain.debug)
-            hitbox.drawHitBox(g2);
-
     }
 
     public void bump(){

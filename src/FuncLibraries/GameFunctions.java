@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class GameFunctions {
 
-    public static final int FRAMEWIDTH = 1000, FRAMEHEIGHT = 600;
+    public static final int FRAMEWIDTH = 1500, FRAMEHEIGHT = 800;
 
     public boolean checkEnemyHitDetection(ArrayList<PipeSet> pipeSets, Bird bird){
         for(PipeSet p: pipeSets){

@@ -84,6 +84,13 @@ public class GameMain extends JPanel {
         for(PipeSet p: pipeSets)
             p.draw(g2);
         bird.draw(g2);
+        if(debug){
+            for(PipeSet p: pipeSets) {
+                p.getTopPipeHitBox().drawHitBox(g2);
+                p.getBotPipeHitBox().drawHitBox(g2);
+            }
+            bird.getHitbox().drawHitBox(g2);
+        }
 
     }
 

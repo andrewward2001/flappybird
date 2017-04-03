@@ -1,6 +1,7 @@
-package Game;
+package Execute;
 
 import FuncLibraries.*;
+import Game.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,21 +15,20 @@ public class GameMain extends JPanel {
 
     //instance fields for the general environment
     private Background bg;
-    private Timer timer;
+    private Timer runtime, endGame;
     private boolean[] keys;
     private Bird bird;
     private ArrayList<PipeSet> pipeSets;
     private GameFunctions functions;
 
     public static final boolean debug = true;
-
     static boolean active = true;
 
     GameMain(){
 
         instanceSetup();
 
-        timer = new Timer(40, e -> {
+        runtime = new Timer(40, e -> {
             if(keys[KeyEvent.VK_SPACE] && active)
                 bird.bump();
 
@@ -43,8 +43,15 @@ public class GameMain extends JPanel {
                 active = false;
             }
             repaint();
+
         });
-        timer.start();
+
+        endGame = new Timer(40, e -> {
+            bird.update();
+            repaint();
+        });
+
+        start();
 
         addKeyListener(new KeyListener() {
             @Override
@@ -75,6 +82,10 @@ public class GameMain extends JPanel {
         functions = new GameFunctions();
     }
 
+    private void start(){
+        runtime.start();
+    }
+
     //Our paint method.
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -96,9 +107,11 @@ public class GameMain extends JPanel {
 
 
     private void endGame() {
+        runtime.stop();
         for (PipeSet p: pipeSets)
             p.endGame();
         bird.endGame();
+        endGame.start();
     }
 
     public static void main(String[] args) {

@@ -15,7 +15,7 @@ public class Bird{
     private BufferedImage pic;
     private Point loc;
 
-    Bird(){
+    public Bird(){
         try {
             pic = ImageIO.read(new File("res/flappybird.png"));
         } catch (IOException e) {
@@ -36,7 +36,7 @@ public class Bird{
     }
 
     public void bump(){
-        vy = -30;
+        vy = -20;
     }
 
     public HitBox getHitbox(){
@@ -48,8 +48,7 @@ public class Bird{
     }
 
     public void endGame(){
-        vy = 20;
-
+        bump();
     }
 
 }

@@ -1,6 +1,6 @@
 package FuncLibraries;
 
-import Game.GameMain;
+import Execute.GameMain;
 
 import java.awt.*;
 

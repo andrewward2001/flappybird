@@ -21,8 +21,8 @@ public class Background {
             bg = ImageIO.read(new File("res/bg.png"));
         }catch(Exception e){e.printStackTrace();}
 
-        ceilingHitBox = new HitBox(new Rectangle(0, 0, 1000, 50));
-        floorHitBox = new HitBox(new Rectangle(950, 0, 1000, 50));
+        ceilingHitBox = new HitBox(new Rectangle(0, -100, 1000, 50));
+        floorHitBox = new HitBox(new Rectangle(0, FH, 1000, 50));
     }
 
     public HitBox getCeilingHitBox() {

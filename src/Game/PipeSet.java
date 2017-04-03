@@ -18,7 +18,7 @@ public class PipeSet {
     private HitBox topPipeHitBox, botPipeHitBox;
     private int speed;
 
-    PipeSet(int x){
+    public PipeSet(int x){
         setSpeed(5);
         setup(x);
     }
@@ -29,7 +29,7 @@ public class PipeSet {
     }
 
     private void setupLoc(int x){
-        int topPipeY = (int)(Math.random()*700);
+        int topPipeY = (int)(Math.random()*600);
         int botPipeY = fh - topPipeY + (int)(Math.random()*20) + 180;
         topPipeLoc = new Point(x, 0 - topPipeY);
         botPipeLoc = new Point(x, botPipeY);
@@ -61,23 +61,23 @@ public class PipeSet {
         return botPipeHitBox;
     }
 
-    void update(){
+    public void update(){
         topPipeHitBox.setBounds(getTopBoundingRectangle());
         botPipeHitBox.setBounds(getBotBoundingRectangle());
         topPipeLoc.translate(-speed, 0);
         botPipeLoc.translate(-speed, 0);
     }
 
-    void setSpeed(int speed){
+    public void setSpeed(int speed){
         this.speed = speed;
     } //TODO: To be used later for increasing difficulty purposes.
 
-    void draw(Graphics2D g2){
+    public void draw(Graphics2D g2){
         g2.drawImage(topPipePic, topPipeLoc.x, topPipeLoc.y, null);
         g2.drawImage(botPipePic, botPipeLoc.x, botPipeLoc.y, null);
     }
 
-    void endGame(){
+    public void endGame(){
         speed = 0;
     }
 

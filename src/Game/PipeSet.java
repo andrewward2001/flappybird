@@ -17,9 +17,11 @@ public class PipeSet {
     private BufferedImage topPipePic, botPipePic;
     private HitBox topPipeHitBox, botPipeHitBox;
     private int speed;
+    private boolean unscored;
 
     public PipeSet(int x){
-        setSpeed(5);
+        unscored = true;
+        setSpeed(3);
         setup(x);
     }
 
@@ -66,19 +68,35 @@ public class PipeSet {
         botPipeHitBox.translate(-speed, 0);
         topPipeLoc.translate(-speed, 0);
         botPipeLoc.translate(-speed, 0);
+
     }
 
     public void setSpeed(int speed){
         this.speed = speed;
-    } //TODO: To be used later for increasing difficulty purposes.
+    }
+    public int getSpeed(){
+        return speed;
+    }
 
     public void draw(Graphics2D g2){
         g2.drawImage(topPipePic, topPipeLoc.x, topPipeLoc.y, null);
         g2.drawImage(botPipePic, botPipeLoc.x, botPipeLoc.y, null);
     }
 
-    public void endGame(){
-        speed = 0;
+    public int getLoc(){
+        return topPipeLoc.x;
+    }
+
+    public int getWidth(){
+        return topPipePic.getWidth();
+    }
+
+    public boolean isUnscored() {
+        return unscored;
+    }
+
+    public void scored(){
+        unscored = false;
     }
 
 }

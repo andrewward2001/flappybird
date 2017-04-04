@@ -4,7 +4,9 @@ import Game.Background;
 import Game.PipeSet;
 import Game.Bird;
 
+import javax.swing.*;
 import java.util.ArrayList;
+
 
 public class GameFunctions {
 
@@ -20,6 +22,12 @@ public class GameFunctions {
 
     public boolean checkBackgroundHitDetection(Background bg, Bird bird){
         return bg.getCeilingHitBox().intersects(bird.getHitbox()) || bg.getFloorHitBox().intersects(bird.getHitbox());
+    }
+
+    public void stopTimers(Timer[] timers){
+        for (Timer t: timers){
+            t.stop();
+        }
     }
 
 }

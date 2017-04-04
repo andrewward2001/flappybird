@@ -19,9 +19,7 @@ public class GameFunctions {
     }
 
     public boolean checkBackgroundHitDetection(Background bg, Bird bird){
-        if(bg.getCeilingHitBox().intersects(bird.getHitbox()) || bg.getFloorHitBox().intersects(bird.getHitbox()))
-            return true;
-        return false;
+        return bg.getCeilingHitBox().intersects(bird.getHitbox()) || bg.getFloorHitBox().intersects(bird.getHitbox());
     }
 
 }

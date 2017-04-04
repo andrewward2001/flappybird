@@ -20,11 +20,12 @@ public class GameMain extends JPanel {
     private Bird bird;
     private ArrayList<PipeSet> pipeSets;
     private GameFunctions functions;
+    private int score;
 
     public static final boolean debug = true;
     static boolean active = true;
 
-    GameMain(){
+    public GameMain(){
 
         instanceSetup();
 
@@ -32,8 +33,10 @@ public class GameMain extends JPanel {
             if(keys[KeyEvent.VK_SPACE] && active)
                 bird.bump();
 
-            for(PipeSet s: pipeSets)
+            for(PipeSet s: pipeSets) {
                 s.update();
+            }
+
             bird.update();
             //update each obstacle
 

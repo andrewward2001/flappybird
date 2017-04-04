@@ -26,7 +26,7 @@ public class Bird{
     }
 
     public void update(){
-        hitbox.setBounds(getBoundingRectangle());
+        hitbox.translate(0, vy);
         loc.translate(0, vy);
         vy+=5;
     }

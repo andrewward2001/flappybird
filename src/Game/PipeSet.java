@@ -29,7 +29,7 @@ public class PipeSet {
     }
 
     private void setupLoc(int x){
-        int topPipeY = (int)(Math.random()*600);
+        int topPipeY = (int)(Math.random()*400)+200;
         int botPipeY = fh - topPipeY + (int)(Math.random()*20) + 180;
         topPipeLoc = new Point(x, 0 - topPipeY);
         botPipeLoc = new Point(x, botPipeY);
@@ -62,8 +62,8 @@ public class PipeSet {
     }
 
     public void update(){
-        topPipeHitBox.setBounds(getTopBoundingRectangle());
-        botPipeHitBox.setBounds(getBotBoundingRectangle());
+        topPipeHitBox.translate(-speed, 0);
+        botPipeHitBox.translate(-speed, 0);
         topPipeLoc.translate(-speed, 0);
         botPipeLoc.translate(-speed, 0);
     }
@@ -79,13 +79,6 @@ public class PipeSet {
 
     public void endGame(){
         speed = 0;
-    }
-
-    private Rectangle getTopBoundingRectangle(){
-        return new Rectangle(topPipeLoc.x, topPipeLoc.y, topPipePic.getWidth(), topPipePic.getHeight());
-    }
-    private Rectangle getBotBoundingRectangle(){
-        return new Rectangle(botPipeLoc.x, botPipeLoc.y, botPipePic.getWidth(), botPipePic.getHeight());
     }
 
 }

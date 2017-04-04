@@ -12,7 +12,7 @@ public class HitBox extends Rectangle{
 
     public void drawHitBox(Graphics2D g2){
         if(GameMain.debug)
-            g2.drawRect(this.x, this.y, this.width, this.height);
+            g2.draw(this);
     }
 
 }

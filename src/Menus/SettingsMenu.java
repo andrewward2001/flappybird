@@ -1,5 +1,5 @@
 package Menus;
 
-public class SettingsMenu extends Menu{
+public class SettingsMenu extends FuncLibraries.Menu {
 
 }

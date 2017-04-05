@@ -1,7 +1,9 @@
 package Menus;
 
-public class GameOverMenu extends Menu{
+public class GameOverMenu extends FuncLibraries.Menu {
 
+    public GameOverMenu(){
+    }
 
 
 }

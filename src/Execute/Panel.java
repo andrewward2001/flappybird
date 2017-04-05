@@ -1,7 +1,6 @@
 package Execute;
 
-import FuncLibraries.GameFunctions;
-import FuncLibraries.Score;
+import FuncLibraries.*;
 import Game.Background;
 import Game.Bird;
 import Game.PipeSet;
@@ -25,7 +24,7 @@ public class Panel extends JPanel{
     private ArrayList<PipeSet> pipeSets;
     private GameFunctions functions;
     private Score score;
-    private Menus.Menu menu;
+    private FuncLibraries.Menu menu;
 
     public static final boolean debug = GameMain.debug;
     public static boolean active = true, isSoundEnabled = true;
@@ -33,10 +32,9 @@ public class Panel extends JPanel{
     public enum GameState {INIT, TITLE_STATE, RUN_STATE, PAUSE_STATE, GAMEOVER_STATE}
 
     Panel(){
+        setup();
 
         GameStateUpdate(GameState.INIT);
-
-        setup();
 
         GameStateUpdate(GameState.TITLE_STATE);
 
@@ -143,7 +141,6 @@ public class Panel extends JPanel{
     }
 
     private void GameStateUpdate(GameState gameState) {
-        functions.stopTimers(timers);
         switch(gameState) {
             case INIT: {
                 runtime.start();
@@ -154,7 +151,6 @@ public class Panel extends JPanel{
             }
             case RUN_STATE: {
                 bird = new Bird();
-
             }
             case PAUSE_STATE: {
 

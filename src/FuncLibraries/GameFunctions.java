@@ -1,12 +1,11 @@
 package FuncLibraries;
 
+import Execute.GameMain;
 import Game.Background;
 import Game.PipeSet;
 import Game.Bird;
 
-import javax.swing.*;
 import java.util.ArrayList;
-
 
 public class GameFunctions {
 
@@ -20,14 +19,15 @@ public class GameFunctions {
         return false;
     }
 
-    public boolean checkBackgroundHitDetection(Background bg, Bird bird){
-        return bg.getCeilingHitBox().intersects(bird.getHitbox()) || bg.getFloorHitBox().intersects(bird.getHitbox());
+    public void score(ArrayList<PipeSet> pipeSets, Bird bird) {
+        for(PipeSet p: pipeSets) {
+            if(p.getTopPipeHitBox().getX() == bird.getHitbox().getX())
+                GameMain.G.score += 1;
+        }
     }
 
-    public void stopTimers(Timer[] timers){
-        for (Timer t: timers){
-            t.stop();
-        }
+    public boolean checkBackgroundHitDetection(Background bg, Bird bird){
+        return  bg.getFloorHitBox().intersects(bird.getHitbox());
     }
 
 }

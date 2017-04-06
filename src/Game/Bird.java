@@ -28,7 +28,7 @@ public class Bird{
     public void update(){
         hitbox.translate(0, vy);
         loc.translate(0, vy);
-        vy+=1;
+        vy+=5;
     }
 
     public void draw(Graphics2D g2){
@@ -36,11 +36,7 @@ public class Bird{
     }
 
     public void bump(){
-        vy = -10;
-    }
-
-    public Point getLoc(){
-        return loc;
+        vy = -20;
     }
 
     public HitBox getHitbox(){

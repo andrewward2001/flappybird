@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aaa38fa-66ac-4dde-bb35-d1a281fa8fcb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/flap.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/hurt.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/score.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FuncLibraries/MenuOption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Menus/PauseMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Execute/GameMain.java" afterPath="$PROJECT_DIR$/src/Execute/GameMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Execute/Panel.java" afterPath="$PROJECT_DIR$/src/Execute/Panel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FuncLibraries/GameFunctions.java" afterPath="$PROJECT_DIR$/src/FuncLibraries/GameFunctions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FuncLibraries/Menu.java" afterPath="$PROJECT_DIR$/src/FuncLibraries/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FuncLibraries/Score.java" afterPath="$PROJECT_DIR$/src/FuncLibraries/Score.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Background.java" afterPath="$PROJECT_DIR$/src/Game/Background.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Bird.java" afterPath="$PROJECT_DIR$/src/Game/Bird.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/PipeSet.java" afterPath="$PROJECT_DIR$/src/Game/PipeSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menus/GameOverMenu.java" afterPath="$PROJECT_DIR$/src/Menus/GameOverMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menus/MainMenu.java" afterPath="$PROJECT_DIR$/src/Menus/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menus/SettingsMenu.java" afterPath="$PROJECT_DIR$/src/Menus/SettingsMenu.java" />
     </list>
     <ignored path="thegamewherebendoesallthework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -604,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491345924888</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Final version. Jesus christ that was a lot of hours of coding.">
+      <created>1491527094289</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1491527094289</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -662,7 +653,8 @@
     <MESSAGE value="Modified just about every file.&#10;There's a metric shitton of errors. Taking to Hopps tomorrow." />
     <MESSAGE value="At long last, it legitimately runs. Sprite is getting deleted soon, as soon as I remove any dependencies. Vertical velocity works as well.&#10;I'm still trying to debug Pipes/HitBoxes." />
     <MESSAGE value="Doing shit with menus. Still an error or two post compile." />
-    <option name="LAST_COMMIT_MESSAGE" value="Doing shit with menus. Still an error or two post compile." />
+    <MESSAGE value="Final version. Jesus christ that was a lot of hours of coding." />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version. Jesus christ that was a lot of hours of coding." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

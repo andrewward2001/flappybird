@@ -8,7 +8,8 @@ public class Score {
 
     public void drawScore(Graphics2D g2){
         g2.setColor(Color.WHITE);
-        g2.drawString("Score: " + score, GameFunctions.FRAMEWIDTH - 150, 50);
+        g2.setFont(new Font("Arial", 0, 50));
+        g2.drawString("Score: " + score, GameFunctions.FRAMEWIDTH - 200, 50);
     }
 
     public void addToScore(){

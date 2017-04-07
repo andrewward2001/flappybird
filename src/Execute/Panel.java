@@ -77,8 +77,7 @@ public class Panel extends JPanel{
             }
             if (keys[KeyEvent.VK_SPACE] && active)
                 bird.bump();
-            for (PipeSet s : pipeSets)
-                s.update();
+            pipeSets.forEach(PipeSet::update);
             bird.update();
             //update each obstacle
 
@@ -89,14 +88,10 @@ public class Panel extends JPanel{
                 endGame();
             }
 
-            for (PipeSet s : pipeSets) {
-                if (bird.getLoc().getX() > s.getLoc() + s.getWidth()) {
-                    if (s.isUnscored()) {
-                        score.addToScore();
-                        s.scored();
-                    }
-                }
-            }
+            pipeSets.stream().filter(s -> bird.getLoc().getX() > s.getLoc() + s.getWidth()).filter(PipeSet::isUnscored).forEach(s -> {
+                score.addToScore();
+                s.scored();
+            });
 
             for (int i = 0; i < pipeSets.size(); i++) {
                 PipeSet p = pipeSets.get(i);

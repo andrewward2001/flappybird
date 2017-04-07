@@ -3,6 +3,7 @@ package Menus;
 import Execute.Panel;
 import FuncLibraries.GameFunctions;
 import FuncLibraries.MenuOption;
+import Game.Bird;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,13 +24,19 @@ public class SettingsMenu extends FuncLibraries.Menu {
                 debug = !debug;
             }
         };
-        MenuOption back = new MenuOption("Back to main menu", GameFunctions.FRAMEHEIGHT / 2 + 200) {
+        MenuOption drawBen = new MenuOption("Easter Egg: " + status(Bird.drawBen), GameFunctions.FRAMEHEIGHT / 2 + 200) {
+            @Override
+            public void command() {
+                Bird.drawBen = !Bird.drawBen;
+            }
+        };
+        MenuOption back = new MenuOption("Back to main menu", GameFunctions.FRAMEHEIGHT / 2 + 300) {
             @Override
             public void command() {
                 Panel.changeMenu(1);
             }
         };
-        MenuOption[] menuOptions = {sound, debugEnabled, back};
+        MenuOption[] menuOptions = {sound, debugEnabled, drawBen, back};
         super.setup(menuOptions);
     }
 

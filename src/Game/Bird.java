@@ -12,12 +12,15 @@ public class Bird{
 
     private HitBox hitbox;
     private int vy;
-    private BufferedImage pic;
+    private BufferedImage pic, ben;
     private Point loc;
+
+    public static boolean drawBen = false;
 
     public Bird(){
         try {
             pic = ImageIO.read(new File("res/flappybird.png"));
+            ben = ImageIO.read(new File("res/flappyben.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -32,6 +35,10 @@ public class Bird{
     }
 
     public void draw(Graphics2D g2){
+        if(drawBen) {
+            g2.drawImage(ben, loc.x, loc.y, null);
+            return;
+        }
         g2.drawImage(pic, loc.x, loc.y, null);
     }
 

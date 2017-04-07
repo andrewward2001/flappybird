@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2aaa38fa-66ac-4dde-bb35-d1a281fa8fcb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="thegamewherebendoesallthework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="MenuOption.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FuncLibraries/MenuOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
               <folding>
                 <element signature="method#MenuOption#0;class#MenuOption#0" expanded="false" />
                 <element signature="method#draw#0;class#MenuOption#0" expanded="false" />
@@ -97,7 +96,6 @@
         <option value="$PROJECT_DIR$/src/FuncLibraries/GameFunctions.java" />
         <option value="$PROJECT_DIR$/src/FuncLibraries/Score.java" />
         <option value="$PROJECT_DIR$/src/Execute/GameMain.java" />
-        <option value="$PROJECT_DIR$/src/FuncLibraries/MenuOption.java" />
         <option value="$PROJECT_DIR$/src/Menus/PauseMenu.java" />
         <option value="$PROJECT_DIR$/src/Menus/GameOverMenu.java" />
         <option value="$PROJECT_DIR$/src/FuncLibraries/Menu.java" />
@@ -106,6 +104,7 @@
         <option value="$PROJECT_DIR$/src/Menus/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/Game/Bird.java" />
         <option value="$PROJECT_DIR$/src/Menus/SettingsMenu.java" />
+        <option value="$PROJECT_DIR$/src/FuncLibraries/MenuOption.java" />
       </list>
     </option>
   </component>
@@ -662,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491528742585</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Final version. Jesus christ that was a lot of hours of coding.">
+      <created>1491568631039</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1491568631039</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1097,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FuncLibraries/MenuOption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
           <folding>
             <element signature="method#MenuOption#0;class#MenuOption#0" expanded="false" />
             <element signature="method#draw#0;class#MenuOption#0" expanded="false" />

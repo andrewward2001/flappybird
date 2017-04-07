@@ -1,5 +1,6 @@
 package Game;
 
+import FuncLibraries.GameFunctions;
 import FuncLibraries.HitBox;
 
 import javax.imageio.ImageIO;
@@ -17,9 +18,11 @@ public class PipeSet {
     private BufferedImage topPipePic, botPipePic;
     private HitBox topPipeHitBox, botPipeHitBox;
     private int speed;
+    private boolean unscored;
 
     public PipeSet(int x){
-        setSpeed(5);
+        unscored = true;
+        speed = 4;
         setup(x);
     }
 
@@ -29,7 +32,7 @@ public class PipeSet {
     }
 
     private void setupLoc(int x){
-        int topPipeY = (int)(Math.random()*400)+200;
+        int topPipeY = (int)(Math.random()* GameFunctions.FRAMEHEIGHT/2)+200;
         int botPipeY = fh - topPipeY + (int)(Math.random()*20) + 180;
         topPipeLoc = new Point(x, 0 - topPipeY);
         botPipeLoc = new Point(x, botPipeY);
@@ -66,27 +69,28 @@ public class PipeSet {
         botPipeHitBox.translate(-speed, 0);
         topPipeLoc.translate(-speed, 0);
         botPipeLoc.translate(-speed, 0);
-    }
 
-    public void setSpeed(int speed){
-        this.speed = speed;
-    } //TODO: To be used later for increasing difficulty purposes.
+    }
 
     public void draw(Graphics2D g2){
         g2.drawImage(topPipePic, topPipeLoc.x, topPipeLoc.y, null);
         g2.drawImage(botPipePic, botPipeLoc.x, botPipeLoc.y, null);
     }
 
-    public void endGame(){
-        speed = 0;
-    }
-
-    public Point getAPipe() {
-        return topPipeLoc;
-    }
-
-    public int getLoc() {
+    public int getLoc(){
         return topPipeLoc.x;
+    }
+
+    public int getWidth(){
+        return topPipePic.getWidth();
+    }
+
+    public boolean isUnscored() {
+        return unscored;
+    }
+
+    public void scored(){
+        unscored = false;
     }
 
 }

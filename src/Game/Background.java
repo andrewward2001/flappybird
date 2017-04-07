@@ -1,16 +1,16 @@
 package Game;
 
-import FuncLibraries.*;
+import FuncLibraries.HitBox;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-import static FuncLibraries.GameFunctions.FRAMEWIDTH;
 import static FuncLibraries.GameFunctions.FRAMEHEIGHT;
+import static FuncLibraries.GameFunctions.FRAMEWIDTH;
 
-public class Background {
+public class Background{
 
     private BufferedImage bg;
     private static final int FW = FRAMEWIDTH, FH = FRAMEHEIGHT;
@@ -21,8 +21,8 @@ public class Background {
             bg = ImageIO.read(new File("res/bg.png"));
         }catch(Exception e){e.printStackTrace();}
 
-        ceilingHitBox = new HitBox(new Rectangle(0, -100, 1000, 50));
-        floorHitBox = new HitBox(new Rectangle(0, FH, 1000, 50));
+        ceilingHitBox = new HitBox(new Rectangle(0, -50, FW, 50));
+        floorHitBox = new HitBox(new Rectangle(0, FH, FW, 50));
     }
 
     public HitBox getCeilingHitBox() {
@@ -38,7 +38,6 @@ public class Background {
         g2.setColor(Color.GREEN);
         g2.fillRect(c.x, c.y, c.width, c.height);
         g2.fillRect(f.x, f.y, f.width, f.height);
-        g2.fillRect(0, 950, 1000, 100);
+        //g2.fillRect(0, 950, 1000, 100);
     }
-
 }
